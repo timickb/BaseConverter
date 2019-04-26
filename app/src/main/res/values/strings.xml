@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">Base Converter</string>
+    <string name="hint_number">Number</string>
+    <string name="hint_from">From</string>
+    <string name="hint_to">To</string>
+    <string name="convert">Convert</string>
+    <string name="incorrect_value">Недопустимые значения</string>
+</resources>
