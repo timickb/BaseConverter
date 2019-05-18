@@ -43,15 +43,18 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     @Override
     public void onClick(View v) {
-        Converter c = new Converter(numberInput.getText().toString(),
-                Integer.parseInt(fromInput.getText().toString()),
-                Integer.parseInt(toInput.getText().toString()));
-
-        if(!c.valid()) {
-            Toast.makeText(getApplicationContext(),
-                    R.string.incorrect_value, Toast.LENGTH_SHORT).show();
-        } else {
-            resultLabel.setText(c.convert());
+        try {
+            Converter c = new Converter(numberInput.getText().toString(),
+                    Integer.parseInt(fromInput.getText().toString()),
+                    Integer.parseInt(toInput.getText().toString()));
+            if(!c.valid()) {
+                Toast.makeText(getApplicationContext(),
+                        R.string.incorrect_value, Toast.LENGTH_SHORT).show();
+            } else {
+                resultLabel.setText(c.convert());
+            }
+        } catch(NumberFormatException e) {
+            Toast.makeText(getApplicationContext(), R.string.incorrect_value, Toast.LENGTH_SHORT).show();
         }
     }
 }

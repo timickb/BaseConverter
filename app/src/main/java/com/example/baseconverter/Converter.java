@@ -14,7 +14,7 @@ public class Converter {
     public boolean valid() {
         if(toBase > 36 || fromBase > 36) return false;
         for(int i = 0; i < number.length(); i++) {
-            if(Values.table.get(number.charAt(i)) == null)
+            if(Values.table.get(number.charAt(i)) == null || Values.table.get(number.charAt(i)) >= fromBase)
                 return false;
         }
         return true;
